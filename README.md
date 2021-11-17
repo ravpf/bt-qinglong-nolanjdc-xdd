@@ -45,13 +45,13 @@ docker run -dit \
 拉源码国内
 
 ```jsx
-git clone https://ghproxy.com/https://github.com/NolanHzy/nvjdcdocker.git /root/nolanjdc
+git clone https://ghproxy.com/https://github.com/ravpf/nvjdcdocker.git /root/nolanjdc
 ```
 
 拉取基础
 
 ```jsx
-sudo docker pull nolanhzy/nvjdc:latest
+sudo docker pull ravpf/nvjdc:latest
 ```
 
 如果提示这个，就是失败了，可能是网络原因error pulling image configuration: Get "[https://production.cloudflare.docker.com/registry-v2/docker/registry/v2/blobs/sha256/4b/4bc8f708bdc9bcee830926fe46f33082332b53ef586c84c26de08f137f4c96ff/data?verify=1637048374-JykQlbm%2BsBtB%2FflzE8AFEi3FLcQ%3D](https://production.cloudflare.docker.com/registry-v2/docker/registry/v2/blobs/sha256/4b/4bc8f708bdc9bcee830926fe46f33082332b53ef586c84c26de08f137f4c96ff/data?verify=1637048374-JykQlbm%2BsBtB%2FflzE8AFEi3FLcQ%3D)": net/http: TLS handshake timeout
@@ -59,8 +59,7 @@ sudo docker pull nolanhzy/nvjdc:latest
 重来
 
 Digest: sha256:4f4378dcf8d722f2eacb2bd6e062ea25e3c22f17b6b38d5c292813de9a75c4f8
-Status: Downloaded newer image for nolanhzy/nvjdc:latest
-[docker.io/nolanhzy/nvjdc:latest](http://docker.io/nolanhzy/nvjdc:latest)
+
 
 表示成功
 
@@ -85,7 +84,7 @@ mkdir -p  Config && cd Config
 下载config.json 配置文件并且修改自己的配置不能缺少
 
 ```jsx
-wget -O Config.json   https://ghproxy.com/https://raw.githubusercontent.com/NolanHzy/nvjdc/main/Config.json
+wget -O Config.json   https://ghproxy.com/https://raw.githubusercontent.com/ravpf/nvjdc/main/Config.json
 ```
 
 提示2021-11-16 15:16:43 (154 MB/s) - ‘Config.json’ saved [1427/1427]为下载成功
@@ -138,7 +137,7 @@ cd  /root/nolanjdc
 ```jsx
 sudo docker run   --name nolanjdc -p 5701:80 -d  -v  "$(pwd)":/app \
 -v /etc/localtime:/etc/localtime:ro \
--it --privileged=true  nolanhzy/nvjdc:latest
+-it --privileged=true  ravsmoe/nvjdc:latest
 ```
 
 注意：这里默认端口是5701，如果装了ninja并且端口也为5701，一定要记得改端口。上述脚本5701:80  改5701即可。
